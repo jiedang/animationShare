@@ -1,0 +1,662 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>动画总结</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h1 id="toc_0">Android动画使用总结</h1>
+
+<p>动画感觉说白了就是一句话<br>
+<strong>在触发范围内 循环的修改view特点后 使view重新绘制 展示新的效果</strong></p>
+
+<p>所以只要有满足三个条件就能完成一个效果</p>
+
+<ul>
+<li><p>触发范围  </p>
+
+<p>比如给个时间 在范围内做个事，或者是给个滑动距离 手指在范围内跟随滑动做个事。</p></li>
+<li><p>能改变一个值 </p>
+
+<p>比如View基本属性 或者布局的某个属性，或者自己写的某个效果 画个水波，翻页，做个扩散</p></li>
+<li><p>循环触发绘制</p>
+
+<p>只要能循环触发 View.invalidate就可以了</p>
+
+<p>触发条件 范围 一般都是产品，交互给定的，触发绘制是系统的， 所以关键是 <strong>怎么去改好这个值</strong>。</p></li>
+</ul>
+
+<hr>
+
+<h2 id="toc_1">属性动画</h2>
+
+<p>要说属性动画必须提到 <strong><em>nineOld( JakeWharton  大牛作品)</em></strong>。nineOld和Android系统里面的类 名称，功能也一样，所以使用起来 没啥区别。同事还支持3.0以下版本的，还提供了ViewHelper支持通过set,get方法修改View基本属性。（3.0以上 可以支持set get方法去修改）</p>
+
+<h3 id="toc_2">基本使用</h3>
+
+<ol>
+<li><p>最简单写法</p>
+
+<p><img src="http://note.youdao.com/yws/res/287/64D80AE2E1684624A61D17AEEA4EAF20" alt=""></p></li>
+<li><p>支持的基本属性 可以在 nineOld源码中得 ObjectAnimator 查看支持的属性
+<img src="http://note.youdao.com/yws/res/288/F98F2BAFF20F4DD1B318A16776A10D70" alt=""></p></li>
+<li><p>viewHelper支持低版本 可以直接set,get操作VIEW属性 </p></li>
+<li><p>AnimatorSet 控制多个动画设置执行顺序</p>
+
+<pre><code>AnimatorSet  animation = new AnimatorSet();
+1 animation.playTogether(AA,BB); 
+2 animation.playSequentially(AA,BB);
+3 animation.play(AA).with(BB).after(CC).before(DD);</code></pre>
+
+<p>代码块1 同时执行AA和BB</p>
+
+<p>代码块2 线性执行AA和BB</p>
+
+<p>代码块3 自己构建执行顺序</p></li>
+<li><p>一个view多个属性同时变化完成动画 </p>
+
+<ul>
+<li>PropertyValuesHolder使用</li>
+</ul>
+
+<pre><code>
+PropertyValuesHolder.ofFloat(&quot;width&quot;, A,B;
+
+PropertyValuesHolder.ofFloat(&quot;height&quot;, c,D);
+
+通过objectAnimator的 PropertyValues借口实现多个属性同时修改
+ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder... )
+</code></pre>
+
+<ul>
+<li>ViewPropertyAnimator.animate连缀写</li>
+</ul>
+
+<p>左右翻转着 平移到（A,B）</p>
+
+<pre><code>ViewPropertyAnimator.animate(view).rotationYBy(720).x(xValue).y(yValue)
+</code></pre></li>
+</ol>
+
+<h3 id="toc_3">nineOld实现原理及其自定义实现</h3>
+
+<ol>
+<li><p>自定义实现 <strong>demo挤出效果</strong></p>
+
+<p>有时候完成一个效果 已经不是view基本属性的范围 就需要自定义一个“属性”。</p>
+
+<p>例如 做一个挤出 收回 VIEW的动画 需要动态调整属性是 布局属性 layout_marginBottom</p>
+
+<p>自定属性包含三部分</p>
+
+<ul>
+<li><p>viewHolder 被操作的VIEW</p></li>
+<li><p>dataHolder 要操作的数据</p></li>
+<li><p>Evaluator 数据怎么变</p></li>
+</ul></li>
+<li><p>nineOld怎么改值 怎么实现的</p>
+
+<ul>
+<li><p>API 11以上  通过反射修改</p>
+
+<p>核心类 <strong>PropertyValuesHolder</strong></p>
+
+<p>PropertyValuesHolder来反射修改属性值 最关键的 是获取方法</p></li>
+</ul>
+
+<pre><code> private Method getPropertyFunction(Class targetClass, String prefix, Class valueType) {
+    // TODO: faster implementation...
+    Method returnVal = null;
+    String methodName = getMethodName(prefix, mPropertyName);
+    Class args[] = null;
+    if (valueType == null) {
+        try {
+            returnVal = targetClass.getMethod(methodName, args);
+        } catch (NoSuchMethodException e) {
+            /* The native implementation uses JNI to do reflection, which allows access to private methods.
+             * getDeclaredMethod(..) does not find superclass methods, so it&#39;s implemented as a fallback.
+             */
+            try {
+                returnVal = targetClass.getDeclaredMethod(methodName, args);
+                returnVal.setAccessible(true);
+            } catch (NoSuchMethodException e2) {
+                Log.e(&quot;PropertyValuesHolder&quot;,
+                        &quot;Couldn&#39;t find no-arg method for property &quot; + mPropertyName + &quot;: &quot; + e);
+            }
+        }
+    } else {
+        args = new Class[1];
+        Class typeVariants[];
+        if (mValueType.equals(Float.class)) {
+            typeVariants = FLOAT_VARIANTS;
+        } else if (mValueType.equals(Integer.class)) {
+            typeVariants = INTEGER_VARIANTS;
+        } else if (mValueType.equals(Double.class)) {
+            typeVariants = DOUBLE_VARIANTS;
+        } else {
+            typeVariants = new Class[1];
+            typeVariants[0] = mValueType;
+        }
+        for (Class typeVariant : typeVariants) {
+            args[0] = typeVariant;
+            try {
+                returnVal = targetClass.getMethod(methodName, args);
+                // change the value type to suit
+                mValueType = typeVariant;
+                return returnVal;
+            } catch (NoSuchMethodException e) {
+                /* The native implementation uses JNI to do reflection, which allows access to private methods.
+                 * getDeclaredMethod(..) does not find superclass methods, so it&#39;s implemented as a fallback.
+                 */
+                try {
+                    returnVal = targetClass.getDeclaredMethod(methodName, args);
+                    returnVal.setAccessible(true);
+                    // change the value type to suit
+                    mValueType = typeVariant;
+                    return returnVal;
+                } catch (NoSuchMethodException e2) {
+                    // Swallow the error and keep trying other variants
+                }
+            }
+        }
+        // If we got here, then no appropriate function was found
+        Log.e(&quot;PropertyValuesHolder&quot;,
+                &quot;Couldn&#39;t find setter/getter for property &quot; + mPropertyName +
+                        &quot; with value type &quot;+ mValueType);
+    }
+
+    return returnVal;
+}
+</code></pre></li>
+</ol>
+
+<ul>
+<li><p>API 11以下  view矩阵变化</p>
+
+<p>核心类 <strong><em>AnimatorProxy</em></strong></p>
+
+<p>AnimatorProxy矩阵变换</p>
+
+<pre><code> private void transformMatrix(Matrix m, View view) {
+    final float w = view.getWidth();
+    final float h = view.getHeight();
+    final boolean hasPivot = mHasPivot;
+    final float pX = hasPivot ? mPivotX : w / 2f;
+    final float pY = hasPivot ? mPivotY : h / 2f;
+
+    final float rX = mRotationX;
+    final float rY = mRotationY;
+    final float rZ = mRotationZ;
+    if ((rX != 0) || (rY != 0) || (rZ != 0)) {
+        final Camera camera = mCamera;
+        camera.save();
+        camera.rotateX(rX);
+        camera.rotateY(rY);
+        camera.rotateZ(-rZ);
+        camera.getMatrix(m);
+        camera.restore();
+        m.preTranslate(-pX, -pY);
+        m.postTranslate(pX, pY);
+    }
+
+    final float sX = mScaleX;
+    final float sY = mScaleY;
+    if ((sX != 1.0f) || (sY != 1.0f)) {
+        m.postScale(sX, sY);
+        final float sPX = -(pX / w) * ((sX * w) - w);
+        final float sPY = -(pY / h) * ((sY * h) - h);
+        m.postTranslate(sPX, sPY);
+    }
+
+    m.postTranslate(mTranslationX, mTranslationY);
+}
+</code></pre></li>
+<li><p>触发绘制</p>
+
+<p>关键类 <strong><em>ValueAnimator</em></strong></p>
+
+<p>关键方法 <strong><em>animationFrame</em></strong> 控制run </p>
+
+<p>关键方法 <strong><em>handleMessage</em></strong> 处理一些状态 start stop </p></li>
+</ul>
+
+<h3 id="toc_4">组合使用 flyRefrsh</h3>
+
+<p>flyRefrsh 使用系统属性动画来组合做出来的 没有使用nineOld做低版本支持，拿来主要看组合使用。</p>
+
+<p>github项目地址 <a href="https://github.com/race604/FlyRefresh">传送门</a></p>
+
+<p>实现分析<a href="http://www.race604.com/flyrefresh/">传送门</a></p>
+
+<hr>
+
+<h2 id="toc_5">自定义动画</h2>
+
+<p>我们也可以像Android官方提供动画一样 自己去复写一个类似于ScaleAnimation一样</p>
+
+<p>主要方法 </p>
+
+<ul>
+<li>applyTransformation 实现动画的效果变化(官方都是改矩阵 也可以改其他)</li>
+<li>initialize 初始化数据</li>
+</ul>
+
+<h3 id="toc_6">对于属性操作</h3>
+
+<p><strong>demo挤出效果 自定义动画实现</strong></p>
+
+<p>ObjectAnimation 关键方法</p>
+
+<pre><code>
+ @Override
+    protected void applyTransformation(float interpolatedTime, Transformation t) {
+        float temp = startValue + (endValue - startValue) * interpolatedTime;
+        if (temp != value) {
+            value = temp;
+            if(onInvalidateImp != null){
+                onInvalidateImp.onInvalidate(view,value);
+            }
+            view.invalidate();
+        }
+        //super.applyTransformation(interpolatedTime,t);
+    }
+    </code></pre>
+
+<p>在实现效果方法里面 丢出借口 onInvalidate（view,value），外部使用中间量 实现对应效果（改属性或者改矩阵）</p>
+
+<p>关于动画绘制过程 有哪些方法 都是干什么的 可以关注啊下</p>
+
+<p>android 动画执行流程分析 <a href="http://dangjie.me/2015/06/05/animationProcess.html">传送门</a></p>
+
+<h3 id="toc_7">复写draw实现</h3>
+
+<p>说到draw就必须说这三个类</p>
+
+<p>最关键类 canvas画布  paint画笔   matrix矩阵</p>
+
+<ul>
+<li><p>canvas 整体性操作 类型 翻转，平移，缩放，扭曲，裁剪</p>
+
+<p>canvas操作中 不受到其他操作影响 一定要 save()、restore()</p></li>
+<li><p>paint 效果细节 颜色，粗细，重叠方式，空实心等 比较多写不过来</p></li>
+<li><p>matrix 存储view基本特征属性(位置，大小，2D/3D旋转角度，倾斜角度) </p>
+
+<p>可以通过修改这些属性实现效果</p>
+
+<p>可以百度下 很多基础功能类介绍，</p>
+
+<p>对于3D翻转,使用camera构建一个矩阵添加到画布上去 类似于nineOld中对于API 11以下版本实现方式</p></li>
+</ul>
+
+<p><strong>demo简单出票</strong></p>
+
+<p>主要完成一个画布的裁剪 实现一个“吐出来”效果
+有使用一些动画上 原有功能 RepeatCount RepeatMode 实现往复</p>
+
+<pre><code>
+            canvas.save();
+            canvas.translate(0,currentHeight - ticketH);
+            canvas.clipRect(ticketL, ticketT + ticketH - currentHeight,ticketR,ticketB);
+            ticket.draw(canvas);
+            canvas.restore();
+ </code></pre>
+
+<p><strong>demo圆环</strong></p>
+
+<p>复杂点 2个状态切换的 圆环翻转 和 圆环弧度变化</p>
+
+<p>翻转</p>
+
+<p>生成翻转矩阵 添加到画布上</p>
+
+<pre><code>XX 矩阵操作生成翻转 matrix  XX
+canvas.concat(matrix);
+</code></pre>
+
+<p>跟弧度 画对应长度圆弧标示百分比</p>
+
+<pre><code>canvas.drawArc(mBigOval, -90, mCurrentSweep, false, mPaint);
+</code></pre>
+
+<p>优化点</p>
+
+<p>讲两个view合成为一个 在objectionAnimation 存储状态值 
+判断状态值 进行不同操作</p>
+
+<pre><code>  @Override
+    public float getValue() {
+        return value;
+    }
+
+    @Override
+    public int getStep() {
+        return 0;
+    }
+</code></pre>
+
+<h3 id="toc_8">控件动画实现</h3>
+
+<p>控件每个都不一样 主要是找到你要进行动画的view 添加对应的效果</p>
+
+<ol>
+<li><p>listView item添加效果</p>
+
+<p><strong>demo jazzyListView</strong> 实现核心代码</p></li>
+<li><p>viewGourp item 添加效果</p>
+
+<p><strong>demoe sortGridView</strong> 实现核心代码</p></li>
+</ol>
+
+<hr>
+
+<h2 id="toc_9">interpolator 插值器</h2>
+
+<p>原来收藏过的 比较详细的一个 图比较多 很清楚直观</p>
+
+<p>介绍文档<a href="http://my.oschina.net/banxi/blog/135633">传送门</a></p>
+
+<p>一个github项目<a href="https://github.com/daimajia/AnimationEasingFunctions">传送门</a></p>
+
+
+</body>
+
+</html>
