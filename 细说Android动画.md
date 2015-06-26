@@ -26,11 +26,13 @@
 ###基本使用###
 1. 最简单写法
 
- ![](http://note.youdao.com/yws/res/287/64D80AE2E1684624A61D17AEEA4EAF20)
+ ![](https://github.com/jiedang/animationShare/blob/master/nine_old_1.png)
 
 
 2. 支持的基本属性 可以在 nineOld源码中得 ObjectAnimator 查看支持的属性
- ![](http://note.youdao.com/yws/res/288/F98F2BAFF20F4DD1B318A16776A10D70)
+
+ ![](https://github.com/jiedang/animationShare/blob/master/nine_old_2.png)
+
 3. viewHelper支持低版本 可以直接set,get操作VIEW属性 
 
 4. AnimatorSet 控制多个动画设置执行顺序
