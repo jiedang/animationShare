@@ -135,7 +135,7 @@ public class CircleSwapViewOverturnTextView extends TextView {
 	}
 	
 	@Override
-	protected void onDraw(Canvas canvas) {o
+	protected void onDraw(Canvas canvas) {
 		canvas.setDrawFilter(paintFilter);
 		if (showOverTrun) {
 			float value = getValue();

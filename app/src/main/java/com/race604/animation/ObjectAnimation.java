@@ -41,8 +41,8 @@ public class ObjectAnimation<T> extends Animation implements Valuable {
         //super.applyTransformation(interpolatedTime,t);
     }
 
-    public void addonInvalidateImp(OnInvalidateImp _){
-        this.onInvalidateImp = _;
+    public void addonInvalidateImp(OnInvalidateImp a){
+        this.onInvalidateImp = a;
     }
 
 
